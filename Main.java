@@ -3,9 +3,10 @@ package com.linkedlist;
 public class Main {
     public static void main(String[] args) {
         LL list = new LL();
-         list.insert(70);
-         list.insert(30);
-         list.insert(56);
+         list.insertFirst(70);
+         list.insertFirst(30);
+         list.insertFirst(56);
+        System.out.println(list.deleteFirst());
          list.display();
     }
 }
