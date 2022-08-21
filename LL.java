@@ -1,6 +1,7 @@
 package com.linkedlist;
 
 class LL {
+
     private Node head;
     private Node tail;
     private int size;
@@ -16,6 +17,7 @@ class LL {
             tail = head;
         }
         size += 1;
+
     }
     public void insert(int val, int index){
         if (index == 0){
@@ -28,7 +30,7 @@ class LL {
         }
         Node temp = head;
         for (int i = 0; i < index; i++) {
-          temp =temp.next;
+            temp =temp.next;
         }
         Node node = new Node(val,temp.next);
         temp.next = node;
@@ -36,6 +38,45 @@ class LL {
     }
 
     private void insertLast(int val) {
+    }
+    public  int deleteLast(){
+        if (size <= 1){
+            return deleteFirst();
+
+        }
+        Node secondLast = get(size -1);
+        int val = tail.value;
+        tail = secondLast;
+        tail.next =null;
+        return val;
+    }
+    public int delete( int index){
+        if (index == 0){
+            return deleteFirst();
+        }
+        if (index == 0){
+            return deleteLast();
+        }
+        Node prev =get(index -1);
+        int val = prev.next.value;
+        prev.next = prev.next.next;
+        return val;
+    }
+    public Node get(int index){
+        Node node =head;
+        for (int i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return node;
+    }
+    public  int deleteFirst(){
+        int val = head.value;
+        head = head.next;
+        if (head == null){
+            tail = null;
+        }
+        size --;
+        return val;
     }
 
     public void display(){
@@ -63,3 +104,4 @@ class LL {
         }
     }
 }
+

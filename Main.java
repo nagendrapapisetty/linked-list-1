@@ -12,5 +12,6 @@ public class Main {
          list.insertFirst(56);
         list.insert(40,1);
          list.display();
+        System.out.println(list.delete(2));
     }
 }
