@@ -17,22 +17,25 @@ class LL {
         }
         size += 1;
     }
-    public  int deleteLast(){
-       if (size<=1){
-           return deleteLast();
-       }
-       Node secondLast = get(size-2);
-       int val = tail.value;
-       tail = secondLast;
-       tail.next = null;
-       return val;
-    }
-    public Node get(int index){
-        Node node = head;
-        for (int i = 0; i < index; i++) {
-            node = node.next;
+    public void insert(int val, int index){
+        if (index == 0){
+            insertFirst(val);
+            return;
         }
-        return  node;
+        if( index == size){
+            insertLast(val);
+            return;
+        }
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+          temp =temp.next;
+        }
+        Node node = new Node(val,temp.next);
+        temp.next = node;
+        size++;
+    }
+
+    private void insertLast(int val) {
     }
 
     public void display(){

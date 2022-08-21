@@ -10,7 +10,7 @@ public class Main {
          list.insertFirst(70);
          list.insertFirst(30);
          list.insertFirst(56);
-        System.out.println(list.search());
+        list.insert(40,1);
          list.display();
     }
 }
